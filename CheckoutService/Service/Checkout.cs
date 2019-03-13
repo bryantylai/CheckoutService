@@ -1,4 +1,4 @@
-﻿using CheckoutService.Models;
+﻿using CheckoutService.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +31,7 @@ namespace CheckoutService.Service
         {
             decimal totalAmount = 0.0m;
             var productsGroupedByProductId = _products
-                .GroupBy(p => p.ID)
+                .GroupBy(p => p.Id)
                 .Select(g => new { ProductId = g.Key, Products = g.ToList() })
                 .ToList();
 

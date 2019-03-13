@@ -3,17 +3,17 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CheckoutService.Service;
 using CheckoutService.Data;
-using CheckoutService.Models;
+using CheckoutService.Entities;
 
 namespace CheckoutServiceTest
 {
     [TestClass]
     public class CheckoutTest
     {
-        private IPricingService _pricingService = new PricingService();
-        private Product classic = ProductData.Get().FirstOrDefault(p => p.ID == "classic");
-        private Product standout = ProductData.Get().FirstOrDefault(p => p.ID == "standout");
-        private Product premium = ProductData.Get().FirstOrDefault(p => p.ID == "premium");
+        private IPricingService _pricingService = new PricingService(new TestPricingRuleData());
+        private Product classic = new Product() { Id = "classic", Name = "Classic Ad", Price = 269.99m };
+        private Product standout = new Product() { Id = "standout", Name = "Standout Ad", Price = 322.99m };
+        private Product premium = new Product() { Id = "premium", Name = "Premium Ad", Price = 394.99m };
 
         [TestMethod]
         public void CheckoutDefault()

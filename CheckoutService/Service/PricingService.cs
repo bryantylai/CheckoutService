@@ -1,5 +1,5 @@
 ﻿using CheckoutService.Data;
-using CheckoutService.Models;
+using CheckoutService.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +14,16 @@ namespace CheckoutService.Service
 
     public class PricingService : IPricingService
     {
+        private IPricingRuleData _pricingRuleData;
+
+        public PricingService(IPricingRuleData pricingRuleData)
+        {
+            _pricingRuleData = pricingRuleData;
+        }
+
         public List<PricingRule> GetPricingRules(string customerID)
         {
-            List<PricingRule> pricingRules = PricingRuleData.Get();
+            List<PricingRule> pricingRules = _pricingRuleData.Get();
 
             return pricingRules.Where(pr => pr.CustomerID == customerID).ToList();
         }

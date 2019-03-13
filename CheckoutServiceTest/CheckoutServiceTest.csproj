@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CheckoutTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestPricingRuleData.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CheckoutService\CheckoutService.csproj">
