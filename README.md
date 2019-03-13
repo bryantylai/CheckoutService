@@ -33,3 +33,5 @@ The database ia hosted on Azure using Azure SQL Database and has the following t
 ** MinimumQuantity and DiscountedPricePerProduct comes in a pair whereby MinimumQuantity determines the minimum quantiy required to apply the DiscountedPricePerProduct
 
 Unit Test is available in CheckoutServiceTest project.
+
+Github: https://github.com/bryantylai/CheckoutService
